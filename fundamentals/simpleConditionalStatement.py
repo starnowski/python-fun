@@ -20,6 +20,8 @@ def main():
     print(return_statement_about_comparing_integers(7, 10))
     print(return_statement_about_comparing_integers(7, 7))
     print(return_statement_about_comparing_integers(10, 7))
+    print(return_if_left_equals_right(5, 7))
+    print(return_if_left_equals_right(5, 5))
 
 
 def return_statement_about_comparing_integers(left, right):
@@ -29,6 +31,11 @@ def return_statement_about_comparing_integers(left, right):
         return "left is bigger right"
     else:
         return "left is lower right"
+
+
+def return_if_left_equals_right(left, right):
+    return "left equals right" if left == right else "left does not equals right"
+
 
 if __name__ == "__main__":
     main()
