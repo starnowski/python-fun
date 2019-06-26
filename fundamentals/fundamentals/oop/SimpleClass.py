@@ -1,21 +1,24 @@
 
-class simpleClass():
+class SimpleClass:
+
+    def __init__(self):
+        pass  # constructor?
 
     def print_hello(self):
-        print "Hello from class 'simpleClass' : " + str(self)
+        print "Hello from class 'SimpleClass' : " + str(self)
 
     @staticmethod
     def print_hello_by_class():
-        print "Hello from static method for class 'simpleClass'"
+        print "Hello from static method for class 'SimpleClass'"
 
     def print_hello_to_someone(self, person_name):
         print "Hello says " + str(self) + " to " + person_name
 
 
 def main():
-    ob = simpleClass()
+    ob = SimpleClass()  # initializing object of type simpleClass
     ob.print_hello()
-    simpleClass.print_hello_by_class()
+    SimpleClass.print_hello_by_class()
     ob.print_hello_to_someone("Szymon")
 
 
