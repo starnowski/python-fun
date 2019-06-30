@@ -14,10 +14,10 @@ class SimpleClass:
         print "Hello says " + str(self) + " to " + person_name
 
 
-class InheritatedClassExample(SimpleClass):
+class InheritedClassExample(SimpleClass):
     def print_hello(self):
         SimpleClass.print_hello(self)
-        print "Hello from class 'InheritatedClassExample' : " + str(self)
+        print "Hello from class 'InheritedClassExample' : " + str(self)
 
 def main():
     ob = SimpleClass()  # initializing object of type simpleClass
@@ -25,7 +25,7 @@ def main():
     SimpleClass.print_hello_by_class()
     ob.print_hello_to_someone("Szymon")
 
-    ice = InheritatedClassExample()
+    ice = InheritedClassExample()
     ice.print_hello()
     ice.print_hello_to_someone("Szymon")
 
