@@ -19,6 +19,7 @@ class InheritedClassExample(SimpleClass):
         SimpleClass.print_hello(self)
         print "Hello from class 'InheritedClassExample' : " + str(self)
 
+
 def main():
     ob = SimpleClass()  # initializing object of type simpleClass
     ob.print_hello()
