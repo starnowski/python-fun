@@ -1,8 +1,8 @@
 import unittest
 from InheritedClassExample import InheritedClassExample
 
-class TestStringMethods(unittest.TestCase):
 
+class TestStringMethods(unittest.TestCase):
 
     def test_should_return_string_with_suffix_InheritedClassExample(self):
         tested = InheritedClassExample()
