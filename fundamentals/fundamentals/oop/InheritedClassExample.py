@@ -13,6 +13,9 @@ class SimpleClass:
     def print_hello_to_someone(self, person_name):
         print "Hello says " + str(self) + " to " + person_name
 
+    def return_welcome_statement(self, name):
+        return "The object of class SimpleClass welcomes you, " + str(name)
+
 
 class InheritedClassExample(SimpleClass):
     def print_hello(self):
