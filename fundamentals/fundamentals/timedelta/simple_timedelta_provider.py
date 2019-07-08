@@ -1,3 +1,6 @@
+from datetime import timedelta
+
+
 # simple_timedelta_provider.py
 class SimpleTimedeltaProvider:
 
@@ -6,4 +9,4 @@ class SimpleTimedeltaProvider:
 
     @staticmethod
     def get_year_delta_string():
-        return ""
+        return str(timedelta(days=365))
