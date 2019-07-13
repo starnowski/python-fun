@@ -1,22 +1,25 @@
 import unittest
 import random
+import os
+from os import path
 
 
 class TestReadFile(unittest.TestCase):
 
     def test_should_create_new_file_with_content_and_then_read_it(self):
         # given
-        file_number = random.randint(1, 99999)
+        random_number = random.randint(1, 99999)
+        self.created_test_file = str(random_number) + "_write_test.txt"
 
         # when
-        f = open(str(file_number) + "_write_test.txt", "w+")
+        f = open(self.created_test_file, "w+")
         self.f = f
         f.write("first line\n")
         f.write("second line")
         f.close()
 
         # then
-        f = open(str(file_number) + "_write_test.txt", "r")
+        f = open(self.created_test_file, "r")
         self.f = f
         fl = f.readlines()
         self.assertEqual("first line\n", fl[0])
@@ -24,23 +27,24 @@ class TestReadFile(unittest.TestCase):
 
     def test_should_create_new_file_with_content_and_then_append_it(self):
         # given
-        file_number = random.randint(1, 99999)
+        random_number = random.randint(1, 99999)
+        self.created_test_file = str(random_number) + "_write_test.txt"
 
         # when
-        f = open(str(file_number) + "_write_test.txt", "w+")
+        f = open(self.created_test_file, "w+")
         self.f = f
         f.write("first line\n")
         f.write("second line")
         f.close()
 
-        f = open(str(file_number) + "_write_test.txt", "a")
+        f = open(self.created_test_file, "a")
         self.f = f
         f.write("\nthird line\n")
         f.write("fourth line")
         f.close()
 
         # then
-        f = open(str(file_number) + "_write_test.txt", "r")
+        f = open(self.created_test_file, "r")
         self.f = f
         fl = f.readlines()
         self.assertEqual("first line\n", fl[0])
@@ -56,7 +60,11 @@ class TestReadFile(unittest.TestCase):
         self.assertEqual("Ola ma psa", fl[1])
 
     def tearDown(self):
-        self.f.close()
+        if hasattr(self, 'f'):
+            self.f.close()
+
+        if hasattr(self, 'created_test_file') and path.exists(self.created_test_file):
+                os.remove(self.created_test_file)
 
 
 if __name__ == '__main__':
