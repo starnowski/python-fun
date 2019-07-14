@@ -53,11 +53,26 @@ class TestReadFile(unittest.TestCase):
         self.assertEqual("fourth line", fl[3])
 
     def test_should_return_all_lines_in_file(self):
+        # given
         f = open("test1.txt", "r")
         self.f = f
+
+        # when
         fl = f.readlines()
+
+        # then
         self.assertEqual("Ala ma kota\n", fl[0])
         self.assertEqual("Ola ma psa", fl[1])
+
+    def test_should_return_all_lines_in_file_in_the_with_section(self):
+        # given
+        with open("test1.txt", "r") as f: # 'with' statement - https://docs.python.org/2.5/whatsnew/pep-343.html
+            # when
+            fl = f.readlines()
+
+            # then
+            self.assertEqual("Ala ma kota\n", fl[0])
+            self.assertEqual("Ola ma psa", fl[1])
 
     def tearDown(self):
         if hasattr(self, 'f'):
