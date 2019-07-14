@@ -18,12 +18,13 @@ class TestListDirectory(unittest.TestCase):
         try:
             # when
             with ZipFile(test_dir_archive_name, "w") as zip_file:
-                zip_file.write(test_dir_name)
+                for root, dirs, files in os.walk(test_dir_name):
+                    for fi in files:
+                        zip_file.write(os.path.join(root, fi))
 
             with ZipFile(test_dir_archive_name, "r") as zip_file:
                 zip_file.extractall(test_extracted_dir)
-
-            files = os.listdir(test_extracted_dir)
+            files = os.listdir(test_extracted_dir + "/" + test_dir_name)
 
             # then
             self.assertTrue(files.__contains__("test1"), "Directory should contains file \"test1\"")
