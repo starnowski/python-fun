@@ -16,6 +16,7 @@ class TestListDirectory(unittest.TestCase):
         # then
         self.assertTrue(files.__contains__("test1"), "Directory should contains file \"test1\"")
         self.assertTrue(files.__contains__("test2"), "Directory should contains file \"test2\"")
+        self.assertEqual(2, files.__len__(), "Directory should contains two files only")
 
 
 if __name__ == '__main__':
