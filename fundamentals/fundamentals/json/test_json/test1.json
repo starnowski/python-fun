@@ -1,0 +1,31 @@
+{
+  "name": "SzymonUser",
+  "firstName": "Simon",
+  "lastName": "Tarnowski",
+  "githubRepositories": [
+    {
+      "name": "docker-fun",
+      "technologies": [
+        "docker", "ansible", "shell", "bats-core"
+      ]
+    },
+    {
+      "name": "posmulten",
+      "technologies": [
+        "shell", "java", "groovy"
+      ]
+    },
+    {
+      "name": "bmunit-extension",
+      "technologies": [
+        "java", "groovy"
+      ]
+    },
+    {
+      "name": "bash-fun",
+      "technologies": [
+        "shell"
+      ]
+    }
+  ]
+}
