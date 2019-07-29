@@ -5,4 +5,4 @@ install:
   - pip install -r yamale-fun/requirements.txt
 # command to run tests
 script:
-  - pytest
+  - pytest yamale-fun/
