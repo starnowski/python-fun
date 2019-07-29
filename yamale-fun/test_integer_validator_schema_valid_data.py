@@ -12,7 +12,7 @@ class TestYaml(YamaleTestCase):
         # given
         data_dir_name = os.path.join(self.base_dir, self.data_dir_name)
         files = os.listdir(data_dir_name)
-        self.assertGreater(0, files.__len__(), "Directory with test data files should contains at least one file")
+        self.assertGreater(0, files.__len__(), "Directory '%s' with test data files should contains at least one file" %data_dir_name)
 
         # when
         is_valid = self.validate()
