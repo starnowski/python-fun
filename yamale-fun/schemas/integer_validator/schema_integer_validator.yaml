@@ -1,0 +1,2 @@
+number_of_names:  int(min=1)
+age: int(max=134)
