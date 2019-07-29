@@ -1,0 +1,10 @@
+name: "yamale tests"
+language: python
+python:
+  - "2.7"
+# command to install dependencies
+install:
+  - pip install -r yamale-fun/requirements.txt
+# command to run tests
+script:
+  - pytest yamale-fun/
