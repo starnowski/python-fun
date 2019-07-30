@@ -1,4 +1,4 @@
 shopping_cart:
-  hexadecimal_number_of_eggs:  1G
-  hexadecimal_number_of_jellys: FB
-  hexadecimal_number_of_oranges:  9
+  hexadecimal_number_of_eggs:  0x1G
+  hexadecimal_number_of_jellys: 0xFB
+  hexadecimal_number_of_oranges:  0x9
