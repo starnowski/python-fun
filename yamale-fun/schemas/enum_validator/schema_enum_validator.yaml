@@ -1,20 +1,6 @@
-dance_cource_days:  include('days_of_week')
-swimming_pool_days: include('days_of_week')
-apartment_clean_up_days:  include('days_of_week')
-meeting_with_familly_days:  include('days_of_week')
-meeting_with_friends_days:  include('days_of_week')
-birth_week_day: include('day_of_week')
----
-day_of_week: enum(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
-#
-# No unique constraint!
-# For such case the structure with days of week as fields would be better approach.
-# Example:
-# days_of_week:
-#   monday: True
-#   tuesday:
-#   ...
-#   saturday: False
-#   sunday: True
-#
-days_of_week: list(include('day_of_week'), min=1, max=7)
+dance_cource_days:  list(enum('MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', SATURDAY, SUNDAY), min=1, max=7)
+swimming_pool_days: list(enum('MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', SATURDAY, SUNDAY), min=1, max=7)
+apartment_clean_up_days:  list(enum('MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', SATURDAY, SUNDAY), min=1, max=7)
+meeting_with_familly_days:  list(enum('MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', SATURDAY, SUNDAY), min=1, max=7)
+meeting_with_friends_days:  list(enum('MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', SATURDAY, SUNDAY), min=1, max=7)
+birth_week_day: enum('MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', SATURDAY, SUNDAY)
