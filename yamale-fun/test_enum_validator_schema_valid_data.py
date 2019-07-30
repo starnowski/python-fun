@@ -4,7 +4,7 @@ import os
 
 class TestEnumValidatorSchemaValidData(YamaleTestCase):
     base_dir = os.path.dirname(os.path.realpath(__file__))
-    schema = 'schemas/enum_validator/schema_integer_validator.yaml'
+    schema = 'schemas/enum_validator/schema_enum_validator.yaml'
     data_dir_name = 'data/enum_validator/valid_data'
     yaml = [data_dir_name + '/*.yaml']
 
