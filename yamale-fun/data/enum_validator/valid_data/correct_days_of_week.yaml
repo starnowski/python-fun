@@ -1,0 +1,13 @@
+dance_cource_days:
+  - MONDAY
+  - FRIDAY
+swimming_pool_days:
+  - WEDNESDAY
+apartment_clean_up_days:
+  - TUESDAY
+meeting_with_familly_days:
+  - SATURDAY
+  - SUNDAY
+meeting_with_friends_days:
+  - THURSDAY
+birth_week_day: SUNDAY
