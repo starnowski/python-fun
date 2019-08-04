@@ -1,0 +1,6 @@
+shopping_cart:  include('shopping_cart_type')
+---
+shopping_cart_type:
+  hexadecimal_number_of_eggs:  regex('^([A-F0-9]*)([A-F0-9]?)$', name='hexadecimal number format')
+  hexadecimal_number_of_jellys: regex('^([A-F0-9]*)([A-F0-9]?)$', name='hexadecimal number format')
+  hexadecimal_number_of_oranges:  regex('^([A-F0-9]*)([A-F0-9]?)$', name='hexadecimal number format')
