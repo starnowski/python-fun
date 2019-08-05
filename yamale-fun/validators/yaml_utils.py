@@ -1,6 +1,7 @@
 import yaml
 import jsonpath_rw_ext as jp
 
+
 class YamlFileHelper:
 
     def __init__(self, filepath):
