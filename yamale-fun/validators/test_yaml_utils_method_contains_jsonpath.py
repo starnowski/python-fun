@@ -1,7 +1,6 @@
 import unittest
 from yaml import load
-from validators.yaml_utils import YamlFileHelper
-import os
+from validators.src.yaml_utils import YamlFileHelper
 from os import path
 
 
