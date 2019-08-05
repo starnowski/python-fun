@@ -57,4 +57,4 @@ class YamlFileHelperTest(unittest.TestCase):
         result = self.tested.contains_jsonpath("owner.age")
 
         # then
-        self.assertFalse(result, "YamlFileHelper object should return false for node \"owner.name\"!")
+        self.assertFalse(result, "YamlFileHelper object should return false for node \"owner.age\"!")
