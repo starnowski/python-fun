@@ -59,3 +59,16 @@ class TestYamlFileHelper(unittest.TestCase):
 
         # then
         self.assertFalse(result, "YamlFileHelper object should return false for node \"owner.age\"!")
+
+    def test_should_return_true_for_existed_main_empty_root_node(self):
+        # given
+        with open(self.test_file, "r") as f:
+            yaml_data = load(f)
+            self.assertTrue("emptynode" in yaml_data, "Yaml should contains property \"emptynode\"")
+            self.assertTrue(yaml_data.get("emptynode") is None, "Node \"emptynode\" should have null value")
+
+        # when
+        result = self.tested.contains_jsonpath("emptynode")
+
+        # then
+        self.assertTrue(result, "YamlFileHelper object should return true that \"emptynode\" node exists!")
