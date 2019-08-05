@@ -1,11 +1,13 @@
 import unittest
 from yaml import load
 from validators.yaml_utils import YamlFileHelper
+import os
+from os import path
 
 
 class YamlFileHelperTest(unittest.TestCase):
 
-    test_file = "test/yaml_utils/data.yaml"
+    test_file = path.realpath("test/yaml_utils/data.yaml")
     tested = YamlFileHelper(test_file)
 
     def test_should_return_true_for_existed_main_root_node(self):
