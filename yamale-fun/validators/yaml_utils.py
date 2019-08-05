@@ -1,10 +1,11 @@
 import yaml
 
+
 class YamlFileHelper:
 
     yaml = None
 
-    def __int__(self, filepath):
+    def __init__(self, filepath):
         # TODO
         pass
 
