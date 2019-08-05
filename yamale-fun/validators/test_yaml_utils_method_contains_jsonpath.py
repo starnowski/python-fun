@@ -1,6 +1,5 @@
 import unittest
 from yaml import load
-
 from validators.yaml_utils import YamlFileHelper
 
 
