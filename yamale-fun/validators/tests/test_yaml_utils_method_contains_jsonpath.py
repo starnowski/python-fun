@@ -4,7 +4,7 @@ from validators.src.yaml_utils import YamlFileHelper
 from os import path
 
 
-class YamlFileHelperTest(unittest.TestCase):
+class TestYamlFileHelper(unittest.TestCase):
 
     test_file = path.realpath("yaml_utils/data.yaml")
     tested = YamlFileHelper(test_file)
