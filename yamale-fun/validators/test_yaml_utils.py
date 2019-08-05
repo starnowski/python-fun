@@ -45,3 +45,16 @@ class YamlFileHelperTest(unittest.TestCase):
 
         # then
         self.assertTrue(result, "YamlFileHelper object should return true that \"owner.name\" node exists!")
+
+    def test_should_return_false_for_non_existed_child_node(self):
+        # given
+        with open(self.test_file, "r") as f:
+            yaml_data = load(f)
+            self.assertTrue("owner" in yaml_data, "Yaml should contains property \"owner\"")
+            self.assertTrue("age" not in yaml_data.get("owner"), "Yaml should not contains property \"owner.age\"")
+
+        # when
+        result = self.tested.contains_jsonpath("owner.age")
+
+        # then
+        self.assertFalse(result, "YamlFileHelper object should return false for node \"owner.name\"!")
