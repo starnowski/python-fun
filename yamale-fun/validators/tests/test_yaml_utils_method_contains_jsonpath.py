@@ -73,5 +73,28 @@ class TestYamlFileHelper(unittest.TestCase):
         # then
         self.assertTrue(result, "YamlFileHelper object should return true that \"emptynode\" node exists!")
 
-    # TODO property with comma
+    def test_should_return_true_for_existed_main_root_node_which_contains_comma(self):
+        # given
+        with open(self.test_file, "r") as f:
+            yaml_data = load(f)
+            self.assertTrue("developer.country" in yaml_data, "Yaml should contains property \"developer.country\"")
+
+        # when
+        result = self.tested.contains_jsonpath("'developer.country'")
+
+        # then
+        self.assertTrue(result, "YamlFileHelper object should return true that \"developer.country\" node exists!")
+
+    def test_should_return_false_for_non_existed_main_root_node_which_contains_comma(self):
+        # given
+        with open(self.test_file, "r") as f:
+            yaml_data = load(f)
+            self.assertFalse("developer.name" in yaml_data, "Yaml should contains property \"developer.name\"")
+
+        # when
+        result = self.tested.contains_jsonpath("'developer.name'")
+
+        # then
+        self.assertFalse(result, "YamlFileHelper object should return false for non existed \"developer.name\" node!")
+
     # TODO array value
