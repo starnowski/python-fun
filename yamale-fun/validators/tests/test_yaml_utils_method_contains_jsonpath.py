@@ -72,3 +72,6 @@ class TestYamlFileHelper(unittest.TestCase):
 
         # then
         self.assertTrue(result, "YamlFileHelper object should return true that \"emptynode\" node exists!")
+
+    # TODO property with comma
+    # TODO array value
