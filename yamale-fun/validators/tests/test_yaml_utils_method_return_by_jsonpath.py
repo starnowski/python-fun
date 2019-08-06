@@ -18,7 +18,7 @@ class TestYamlFileHelper(unittest.TestCase):
             self.assertEqual(yaml_data.get("organization"), "Community", "Yaml should contains property \"organization\" with value \"Community\"")
 
         # when
-        result = self.tested.return_by_jsonpath("organization")
+        result = self.tested.return_first_value_by_jsonpath("organization")
 
         # then
         self.assertEqual(result, "Community" , "YamlFileHelper object should return value \"Community\" for \"organization\" node!")
@@ -30,7 +30,7 @@ class TestYamlFileHelper(unittest.TestCase):
             self.assertFalse("company" in yaml_data, "Yaml should not contains property \"organization\"")
 
         # when
-        result = self.tested.return_by_jsonpath("company")
+        result = self.tested.return_first_value_by_jsonpath("company")
 
         # then
         self.assertIsNone(result, "YamlFileHelper object should return None value for node \"company\"!")

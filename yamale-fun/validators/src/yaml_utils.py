@@ -13,7 +13,7 @@ class YamlFileHelper:
     def contains_jsonpath(self, jsonpath):
         return jp.match(jsonpath, self.json_data)
 
-    def return_by_jsonpath(self, jsonpath):
+    def return_first_value_by_jsonpath(self, jsonpath):
         for v in jp.match(jsonpath, self.json_data):
             return v
         return None
