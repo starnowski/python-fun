@@ -1,0 +1,5 @@
+disc_types:  list(include('disc_type'))
+---
+disc_type:
+  name:  str()
+  size_MB: any(int(min=512), regex('^((\d+)|(\d+\.\d+))\s(GB)$', name='Size with Giga bytes'))
