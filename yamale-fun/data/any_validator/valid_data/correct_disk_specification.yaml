@@ -24,6 +24,3 @@ disc_types:
     size_MB:  50 GB
   - name: "Blu-ray Disc XL"
     size_MB:  128 GB
-
-
-
