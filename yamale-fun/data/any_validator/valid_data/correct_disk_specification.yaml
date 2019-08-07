@@ -1,0 +1,29 @@
+# Data from:
+# http://www.discwizards.com/articles/Glossary-CD-DVD-Blu-ray-HD-DVD-types.htm
+#
+disc_types:
+  - name: "CD ROM"
+    size_MB:  512
+  - name: "CD-R 74"
+    size_MB:  630
+  - name: "CD-R 80"
+    size_MB:  703
+  - name: "CD-R 90"
+    size_MB:  790
+  - name: "CD-R 99"
+    size_MB:  870
+  - name: "DVD"
+    size_MB:  4.7 GB
+  - name: "HD-DVD (single layer)"
+    size_MB:  15 GB
+  - name: "HD-DVD (dual layer)"
+    size_MB:  30 GB
+  - name: "Blu-ray Disc (single layer)"
+    size_MB:  25 GB
+  - name: "Blu-ray Disc (dual layer)"
+    size_MB:  50 GB
+  - name: "Blu-ray Disc XL"
+    size_MB:  128 GB
+
+
+
