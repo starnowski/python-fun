@@ -11,7 +11,7 @@ from validators.src.required_reference_validator import RequiredReferenceValidat
 
 class TestRequiredReferenceValidator(unittest.TestCase):
 
-    schema_file = path.join(os.path.dirname(__file__), "required_reference_validator/schemas/schema.yaml")
+    schema_file = path.join(os.path.dirname(__file__), "required_reference_validator/schemas/schema.yml")
 
     def test_should_return_validation_error_for_invalid_schema(self):
         # given
@@ -25,7 +25,7 @@ class TestRequiredReferenceValidator(unittest.TestCase):
         validators_list = validators.DefaultValidators
         validators_list[RequiredReferenceValidator.__name__] = required_reference_validator
         validators_list[required_reference_validator.tag] = required_reference_validator
-        yamale_schema = yamale.make_schema(self.schema_file, validators.DefaultValidators)
+        yamale_schema = yamale.make_schema(self.schema_file, validators=validators_list)
         yamale_data = itertools.chain(*map(yamale.make_data, yaml))
 
         # when
