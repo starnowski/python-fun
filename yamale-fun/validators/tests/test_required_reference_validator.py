@@ -26,7 +26,7 @@ class TestRequiredReferenceValidator(unittest.TestCase):
             validators_list[RequiredReferenceValidator.__name__] = RequiredReferenceValidator
             validators_list[RequiredReferenceValidator.tag] = RequiredReferenceValidator
             yamale_schema = yamale.make_schema(self.schema_file, validators=validators_list)
-            yamale_data = itertools.chain(*map(yamale.make_data, yaml_data))
+            yamale_data = itertools.chain(*map(yamale.make_data, [test_file]))
 
         # when
             result = yamale.validate(yamale_schema, yamale_data) is not None
