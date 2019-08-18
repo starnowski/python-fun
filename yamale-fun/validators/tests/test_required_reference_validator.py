@@ -2,6 +2,9 @@ import unittest
 import os
 from os import path
 import yaml
+import itertools
+import yamale
+from yamale import validators
 
 
 class TestRequiredReferenceValidator(unittest.TestCase):
@@ -16,10 +19,15 @@ class TestRequiredReferenceValidator(unittest.TestCase):
             self.assertTrue("passenger_infant_name" in yaml_data, "Yaml should contains property \"passenger_infant_name\"")
             self.assertFalse("passenger_name" in yaml_data, "Yaml should not contains property \"passenger_name\"")
 
+        required_reference_validator = RequiredReferenceValidator(test_file)
+        validators_list = validators.DefaultValidators
+        validators_list.append()
+        yamale_schema = yamale.make_schema(self.schema_file, validators.DefaultValidators)
+        yamale_data = itertools.chain(*map(yamale.make_data, yaml))
+
+        # when
+        result = yamale.validate(yamale_schema, yamale_data) is not None
         ### TODO
-        tested = InheritedClassExample()
-        self.assertEqual("The object of class InheritedClassExample welcomes you, Szymon",
-                         tested.return_welcome_statement("Szymon"))
 
 
 if __name__ == '__main__':
