@@ -1,7 +1,7 @@
 import yamale
 from yamale.validators import DefaultValidators, Validator
 
-class Date(Validator):
+class RequiredReferenceValidator(Validator):
     """ Custom Date validator """
     tag = 'date'
 
