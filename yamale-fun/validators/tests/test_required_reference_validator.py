@@ -22,10 +22,14 @@ class TestRequiredReferenceValidator(unittest.TestCase):
             self.assertTrue("passenger_infant_name" in yaml_data, "Yaml should contains property \"passenger_infant_name\"")
             self.assertFalse("passenger_name" in yaml_data, "Yaml should not contains property \"passenger_name\"")
 
-        # when
-        result = tested.validate(test_file)
+        try:
+            # when
+            tested.validate(test_file)
+            self.fail("Expected ValueError")
 
-        ### TODO
+        except ValueError:
+            # then
+            pass
 
 
 if __name__ == '__main__':
