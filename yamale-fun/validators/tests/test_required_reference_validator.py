@@ -6,6 +6,8 @@ import itertools
 import yamale
 from yamale import validators
 
+from validators.src.required_reference_validator import RequiredReferenceValidator
+
 
 class TestRequiredReferenceValidator(unittest.TestCase):
 
