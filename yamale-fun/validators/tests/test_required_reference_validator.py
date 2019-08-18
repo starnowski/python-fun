@@ -20,6 +20,7 @@ class TestRequiredReferenceValidator(unittest.TestCase):
         with open(test_file, "r") as f:
             yaml_data = yaml.load(f)
             self.assertTrue("passenger_infant_name" in yaml_data, "Yaml should contains property \"passenger_infant_name\"")
+            self.assertEqual("Mark Doe", yaml_data.get("passenger_infant_name"), "The element \"passenger_infant_name\" should have value \"Mark Doe\"")
             self.assertFalse("passenger_name" in yaml_data, "Yaml should not contains property \"passenger_name\"")
 
         try:
