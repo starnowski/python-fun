@@ -73,7 +73,7 @@ class TestRequiredReferenceValidator(unittest.TestCase):
             yaml_data = yaml.load(f)
             self.assertFalse("passenger_infant_name" in yaml_data, "Yaml should not contains property \"passenger_infant_name\" which is optional property")
             self.assertTrue("passenger_name" in yaml_data, "Yaml should contains property \"passenger_name\"")
-            self.assertEqual("", yaml_data.get("passenger_name"), "The element \"passenger_name\" should have value \"John Doe\"")
+            self.assertEqual(None, yaml_data.get("passenger_name"), "The element \"passenger_name\" should have empty value")
 
         # when
         result = tested.validate(test_file)
