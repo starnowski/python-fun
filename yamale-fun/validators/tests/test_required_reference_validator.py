@@ -21,15 +21,15 @@ class TestRequiredReferenceValidator(unittest.TestCase):
             self.assertTrue("passenger_infant_name" in yaml_data, "Yaml should contains property \"passenger_infant_name\"")
             self.assertFalse("passenger_name" in yaml_data, "Yaml should not contains property \"passenger_name\"")
 
-        required_reference_validator = RequiredReferenceValidator(test_file)
-        validators_list = validators.DefaultValidators
-        validators_list[RequiredReferenceValidator.__name__] = required_reference_validator
-        validators_list[required_reference_validator.tag] = required_reference_validator
-        yamale_schema = yamale.make_schema(self.schema_file, validators=validators_list)
-        yamale_data = itertools.chain(*map(yamale.make_data, yaml))
+        # required_reference_validator = RequiredReferenceValidator(test_file)
+            validators_list = validators.DefaultValidators
+            validators_list[RequiredReferenceValidator.__name__] = RequiredReferenceValidator
+            validators_list[RequiredReferenceValidator.tag] = RequiredReferenceValidator
+            yamale_schema = yamale.make_schema(self.schema_file, validators=validators_list)
+            yamale_data = itertools.chain(*map(yamale.make_data, yaml_data))
 
         # when
-        result = yamale.validate(yamale_schema, yamale_data) is not None
+            result = yamale.validate(yamale_schema, yamale_data) is not None
         ### TODO
 
 
