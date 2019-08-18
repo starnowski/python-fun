@@ -23,7 +23,8 @@ class TestRequiredReferenceValidator(unittest.TestCase):
 
         required_reference_validator = RequiredReferenceValidator(test_file)
         validators_list = validators.DefaultValidators
-        validators_list.append()
+        validators_list[RequiredReferenceValidator.__name__] = required_reference_validator
+        validators_list[required_reference_validator.tag] = required_reference_validator
         yamale_schema = yamale.make_schema(self.schema_file, validators.DefaultValidators)
         yamale_data = itertools.chain(*map(yamale.make_data, yaml))
 
