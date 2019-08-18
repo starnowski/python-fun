@@ -81,5 +81,23 @@ class TestRequiredReferenceValidator(unittest.TestCase):
         # then
         self.assertTrue(result, "Validator should return true")
 
+    def test_should_return_true_for_valid_document_with_empty_optional_property(self):
+        # given
+        tested = YamaleRequiredReferenceFacade(self.schema_file)
+        test_file = path.join(os.path.dirname(__file__), "required_reference_validator/valid_data/passenger_seat/passenger_with_empty_infant.yaml")
+        with open(test_file, "r") as f:
+            yaml_data = yaml.load(f)
+            self.assertTrue("passenger_infant_name" in yaml_data, "Yaml should contains property \"passenger_infant_name\"")
+            self.assertEqual(None, yaml_data.get("passenger_infant_name"), "The element \"passenger_infant_name\" should have empty value")
+            self.assertTrue("passenger_name" in yaml_data, "Yaml should contains property \"passenger_name\"")
+            self.assertEqual("John Doe", yaml_data.get("passenger_name"), "The element \"passenger_name\" should have value \"John Doe\"")
+
+        # when
+        result = tested.validate(test_file)
+
+        # then
+        self.assertTrue(result, "Validator should return true")
+
+
 if __name__ == '__main__':
     unittest.main()
