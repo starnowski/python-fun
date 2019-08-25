@@ -19,7 +19,6 @@ class YamaleRequiredReferenceFacade():
 
 
 class RequiredReferenceValidator(Validator):
-    """ Custom Date validator """
     tag = 'ref_req'
 
     def __init__(self, *args, **kwargs):
