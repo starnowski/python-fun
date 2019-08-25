@@ -1,9 +1,13 @@
+import threading
 import yamale
 from yamale.validators import DefaultValidators, Validator
 import yaml
 import itertools
 import yamale
 from yamale import validators
+
+from validators.src.yaml_utils import YamlFileHelper
+
 
 class YamaleRequiredReferenceFacade():
 
@@ -15,8 +19,9 @@ class YamaleRequiredReferenceFacade():
 
     def validate(self, data_file_path):
         yamale_data = itertools.chain(*map(yamale.make_data, [data_file_path]))
+        yamale_required_reference_facade_data = threading.local()
+        yamale_required_reference_facade_data.yaml_data_store = YamlFileHelper(data_file_path)
         return yamale.validate(self.yamale_schema, yamale_data) is not None
-
 
 class RequiredReferenceValidator(Validator):
     tag = 'ref_req'
